@@ -1,0 +1,30 @@
+The Weather Dashboard is a responsive web application that allows users to check real-time weather conditions and forecasts for any city in the world. The application fetches live data from a public weather API and presents it through a clean, user-friendly interface.
+
+Users can search for a city by name, and the application displays the current temperature, weather condition (sunny, rainy, cloudy, etc.), humidity, and wind speed. Along with current conditions, the app also shows a 5-day forecast, giving users a quick overview of upcoming weather trends.
+
+The project demonstrates practical use of asynchronous JavaScript for handling API requests, dynamic DOM manipulation (or component-based rendering, if built in React) for updating the UI based on live data, and proper error handling for cases like invalid city names or failed network requests. Loading states are used to improve user experience while data is being fetched.
+
+Objective:
+To build a functional, real-world frontend application that integrates a third-party API, handles asynchronous data, and presents information through a well-designed, responsive interface.
+
+Key Features:
+
+Search weather by city name
+Real-time current weather display (temperature, condition, humidity, wind speed)
+5-day weather forecast
+Error handling for invalid inputs
+Loading indicators during data fetch
+Responsive design for desktop and mobile
+
+Technologies Used:
+
+HTML5, CSS3, JavaScript (or React.js)
+OpenWeatherMap API (or WeatherAPI.com)
+Fetch API / Axios for HTTP requests
+
+Learning Outcomes:
+
+Working with external REST APIs
+Handling asynchronous operations (Promises/async-await)
+Building responsive, interactive UI
+Managing application state and error/loading conditions
