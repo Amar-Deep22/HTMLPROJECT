@@ -1,879 +1,839 @@
-# 🌤️ Weather Dashboard
+<div align="center">
 
-### Real-Time Weather Monitoring & 5-Day Forecasting
+# 🌤️ WEATHER DASHBOARD
 
-> A responsive, modern web application that lets users search for any city and instantly view current weather conditions and a 5-day forecast.
+### **Real-Time Weather Monitoring & Forecasting**
 
-<p align="center">
+*A modern, responsive web application for exploring current weather conditions and 5-day forecasts for cities around the world.*
 
-**🔎 Search Cities · 🌡️ Live Weather · 📅 5-Day Forecast · 📍 Current Location · 🌗 °C / °F · 📱 Responsive**
+<br>
 
-</p>
+[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](#)
+[![Responsive](https://img.shields.io/badge/Responsive-Mobile%20%7C%20Tablet%20%7C%20Desktop-blue?style=for-the-badge)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020+-yellow?style=for-the-badge\&logo=javascript\&logoColor=white)](#)
+[![API](https://img.shields.io/badge/API-REST%20%2F%20JSON-orange?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-Academic-lightgrey?style=for-the-badge)](#)
 
----
+<br>
 
-## ✨ Overview
+### 🌍 Search Any City   •   🌡️ Live Weather   •   📅 5-Day Forecast
 
-**Weather Dashboard** is a client-side web application designed to provide a simple and interactive way to check weather conditions for cities around the world.
+<br>
 
-The application connects to a public weather API over HTTPS and transforms the returned weather data into an easy-to-understand dashboard.
-
-The project is designed according to the requirements defined in the project's SRS and focuses on:
-
-* ⚡ Fast asynchronous API requests
-* 🌍 City-based weather search
-* 🌡️ Current weather information
-* 📅 5-day weather forecasting
-* 🔄 Celsius/Fahrenheit conversion
-* 📍 Optional current-location weather
-* 🕘 Recent search history
-* 💾 Browser-based persistence
-* 📱 Responsive design
-* 🛡️ Graceful error handling
+</div>
 
 ---
 
-## 🎯 Project Objectives
+## ✨ EXPERIENCE THE WEATHER DIFFERENTLY
 
-The main objectives of the Weather Dashboard are to:
-
-1. Provide real-time weather information for any searchable city.
-2. Display important weather parameters in a clean interface.
-3. Provide a short-term 5-day forecast.
-4. Create a responsive experience across mobile, tablet, and desktop devices.
-5. Demonstrate asynchronous JavaScript and REST API integration.
-6. Implement client-side data persistence using `localStorage`.
-7. Handle invalid searches, API failures, and network errors gracefully.
-
----
-
-# 🚀 Features
-
-## 🔎 1. City Weather Search
-
-Search for weather information simply by entering a city name.
+> **Weather Dashboard** transforms raw weather API data into a clean, interactive and responsive experience designed for fast everyday weather checking.
 
 ```text
-Enter City → Search → API Request → Weather Dashboard
-```
-
-The application supports both:
-
-* 🔘 Search button
-* ⌨️ Enter key
-
-Empty or whitespace-only searches are rejected before an API request is made.
-
----
-
-## 🌡️ 2. Current Weather
-
-After a successful search, the dashboard displays:
-
-| Information      | Description                        |
-| ---------------- | ---------------------------------- |
-| 🌡️ Temperature  | Current temperature                |
-| 🌤️ Condition    | Current weather condition          |
-| 🖼️ Weather Icon | Visual representation of condition |
-| 🌡️ Feels Like   | Perceived temperature              |
-| 💧 Humidity      | Current humidity percentage        |
-| 💨 Wind Speed    | Current wind speed                 |
-| 📍 Location      | City and country information       |
-
-The SRS specifies that the primary weather information should be visible together without unnecessary navigation.
-
----
-
-# 📅 3. 5-Day Forecast
-
-The dashboard provides a **5-day forecast** using weather data from 3-hour intervals.
-
-The interval data is aggregated into daily summaries.
-
-Each forecast card contains:
-
-```text
-┌─────────────────────┐
-│       Monday        │
-│         ☀️          │
-│                     │
-│   High: 32°C        │
-│   Low:  24°C        │
-└─────────────────────┘
-```
-
-### Forecast Features
-
-* 📅 Day/date
-* 🌤️ Representative weather icon
-* 🔺 Daily high temperature
-* 🔻 Daily low temperature
-* 🔄 Automatic °C/°F conversion
-
-The required behavior is five representative daily forecast cards rather than displaying every 3-hour API record directly.
-
----
-
-# 🌡️ 4. Celsius / Fahrenheit Toggle
-
-Users can switch between:
-
-```text
-°C  ⇄  °F
-```
-
-The conversion happens **on the client side**, meaning another API request is not required.
-
-The selected unit is also saved using `localStorage`.
-
----
-
-# 📍 5. Current Location Weather
-
-The application can optionally use the browser's **Geolocation API**.
-
-```text
-📍 Allow Location
-       ↓
-Browser Geolocation
-       ↓
-Latitude + Longitude
-       ↓
-Weather API
-       ↓
-Current Weather
-```
-
-If the user denies location permission, the rest of the application remains usable.
-
----
-
-# 🕘 6. Recent Searches
-
-The dashboard remembers up to **5 recent distinct searches**.
-
-Example:
-
-```text
-Recent Searches
-
-┌─────────────┐
-│ New Delhi   │
-├─────────────┤
-│ London      │
-├─────────────┤
-│ Tokyo       │
-├─────────────┤
-│ Dubai       │
-├─────────────┤
-│ Paris       │
-└─────────────┘
-```
-
-Clicking a recent city performs the search again.
-
-Duplicate searches are collapsed and moved to the top.
-
----
-
-# 💾 7. Local Persistence
-
-The application uses the browser's `localStorage` to remember:
-
-```text
-Last searched city
-        +
-Temperature unit
-        +
-Recent searches
-```
-
-Therefore, when the user reloads the page, the previous context can be restored.
-
----
-
-# ⏳ 8. Loading State
-
-Weather information is retrieved asynchronously.
-
-During an API request, the dashboard displays a loading indicator rather than leaving the user wondering whether the application is responding.
-
-```text
-Search City
-     ↓
-⏳ Loading...
-     ↓
-🌤️ Weather Results
+                         🌤️ WEATHER DASHBOARD
+                                  │
+             ┌────────────────────┼────────────────────┐
+             │                    │                    │
+             ▼                    ▼                    ▼
+       🔎 SEARCH CITY        📍 LOCATION         🕘 RECENT SEARCHES
+             │                    │                    │
+             └────────────────────┼────────────────────┘
+                                  ▼
+                         🌐 WEATHER API
+                                  │
+                    ┌─────────────┴─────────────┐
+                    ▼                           ▼
+              🌡️ CURRENT                  📅 5-DAY
+               WEATHER                    FORECAST
+                    │                           │
+                    └─────────────┬─────────────┘
+                                  ▼
+                         🖥️ DASHBOARD UI
 ```
 
 ---
 
-# ⚠️ 9. Smart Error Handling
+# 🧭 QUICK NAVIGATION
 
-The application handles common failure scenarios without crashing.
-
-### Invalid City
-
-```text
-⚠️ We couldn't find that city.
-   Check the spelling and try again.
-```
-
-### Network Failure
-
-```text
-⚠️ You appear to be offline.
-   Check your internet connection.
-```
-
-### API Error
-
-```text
-⚠️ Something went wrong.
-   Please try again shortly.
-```
-
-### Empty Search
-
-```text
-⚠️ Please enter a city name.
-```
-
-The SRS specifically requires user-friendly UI feedback instead of blank screens or console-only errors.
+| 🚀    | Section                                |                           |
+| ----- | -------------------------------------- | ------------------------- |
+| 🌟    | [Overview](#-overview)                 | Project introduction      |
+| ⚡     | [Features](#-features)                 | What the dashboard can do |
+| 🖥️   | [Interface](#️-interface-preview)      | UI structure              |
+| 🏗️   | [Architecture](#️-system-architecture) | How the system works      |
+| 🛠️   | [Tech Stack](#️-technology-stack)      | Technologies used         |
+| ⚙️    | [Installation](#️-installation)        | Run locally               |
+| 🔑    | [API Setup](#-api-configuration)       | Configure weather API     |
+| 🧪    | [Testing](#-testing)                   | Test coverage             |
+| 🚀    | [Deployment](#-deployment)             | Deploy the project        |
+| 🗺️   | [Roadmap](#️-future-roadmap)           | Future improvements       |
+| 👨‍💻 | [Developer](#-developer)               | Project information       |
 
 ---
 
-# 📱 Responsive Design
+# 🌟 OVERVIEW
 
-The interface is designed for multiple screen sizes.
+**Weather Dashboard** is a responsive client-side web application that provides real-time weather information and a short-term forecast through a public weather API.
 
-| Device     |     Target |
+The application is designed around a simple principle:
+
+> ### **Search → Understand → Plan**
+
+Users can search for a city and immediately see its current conditions, forecast, and essential weather statistics.
+
+The project scope includes city search, current weather, 5-day forecast, temperature-unit switching, loading states, error handling, recent searches, local persistence, responsive layouts, and optional geolocation.
+
+---
+
+# ⚡ FEATURES
+
+<div align="center">
+
+| 🔎               | 🌡️                      | 📅                       |
+| ---------------- | ------------------------ | ------------------------ |
+| **Smart Search** | **Live Weather**         | **5-Day Forecast**       |
+| Search any city  | Temperature & conditions | Daily forecast summaries |
+
+| 🌡️                | 📍                   | 🕘                  |
+| ------------------ | -------------------- | ------------------- |
+| **°C / °F**        | **Location Weather** | **Recent Searches** |
+| Instant conversion | Optional GPS lookup  | Last 5 cities       |
+
+| ⏳                      | 🛡️                | 📱                |
+| ---------------------- | ------------------ | ----------------- |
+| **Loading States**     | **Error Handling** | **Responsive UI** |
+| Clear request feedback | Friendly failures  | Mobile → Desktop  |
+
+</div>
+
+---
+
+## 🔎 SMART CITY SEARCH
+
+Search for weather using a city name.
+
+```text
+┌──────────────────────────────────────────────────────┐
+│                                                      │
+│   🔎  Search for a city...                    [↗]    │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+```
+
+### Supports
+
+* 🔎 City-name search
+* ⌨️ Enter-key submission
+* 🚫 Empty-input validation
+* ⚡ Asynchronous requests
+* 🛡️ Duplicate request protection
+
+A valid search retrieves the city's current weather information and updates the dashboard.
+
+---
+
+# 🌡️ CURRENT WEATHER
+
+Once a city is selected, the dashboard presents the most important weather information in one place.
+
+```text
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│                    New Delhi, IN                        │
+│                                                         │
+│                         ☀️                              │
+│                       28°C                              │
+│                     Clear Sky                            │
+│                                                         │
+│      ───────────────────────────────────────────        │
+│                                                         │
+│       💧 Humidity       💨 Wind       🌡️ Feels Like    │
+│          65%           12 km/h           29°C          │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Weather information
+
+**Temperature** · **Condition** · **Weather Icon** · **Feels Like** · **Humidity** · **Wind Speed**
+
+These are the primary current-condition fields specified by the SRS.
+
+---
+
+# 📅 5-DAY FORECAST
+
+The dashboard transforms 3-hour forecast information into easy-to-read daily summaries.
+
+```text
+       MON          TUE          WED          THU          FRI
+    ┌────────┐   ┌────────┐   ┌────────┐   ┌────────┐   ┌────────┐
+    │  ☀️    │   │  🌤️    │   │  🌧️    │   │  ☁️    │   │  ☀️    │
+    │        │   │        │   │        │   │        │   │        │
+    │  32°C  │   │  30°C  │   │  27°C  │   │  29°C  │   │  33°C  │
+    │  24°C  │   │  23°C  │   │  22°C  │   │  23°C  │   │  25°C  │
+    └────────┘   └────────┘   └────────┘   └────────┘   └────────┘
+```
+
+Each forecast card represents:
+
+* 📅 Date
+* 🌤️ Representative condition
+* 🔺 High temperature
+* 🔻 Low temperature
+
+The SRS specifies exactly five daily forecast summaries.
+
+---
+
+# 🌡️ TEMPERATURE UNIT SWITCH
+
+Switch between:
+
+<div align="center">
+
+### `°C`  ⇄  `°F`
+
+</div>
+
+The conversion occurs **client-side**, so changing units does not require another API request.
+
+The selected preference can also persist across reloads through `localStorage`.
+
+---
+
+# 📍 CURRENT LOCATION
+
+Don't want to type your city?
+
+Use the location button:
+
+```text
+             📍
+              │
+              ▼
+      Browser Permission
+              │
+              ▼
+       Latitude / Longitude
+              │
+              ▼
+          Weather API
+              │
+              ▼
+       🌤️ Local Weather
+```
+
+The feature uses the browser's Geolocation API and requires user permission. If permission is denied, the dashboard continues working normally.
+
+---
+
+# 🕘 RECENT SEARCHES
+
+Your last **5 distinct searches** can be stored locally.
+
+```text
+┌───────────────────────────────┐
+│       🕘 RECENT SEARCHES       │
+├───────────────────────────────┤
+│  📍 New Delhi                 │
+│  📍 London                    │
+│  📍 Tokyo                     │
+│  📍 Dubai                     │
+│  📍 Paris                     │
+└───────────────────────────────┘
+```
+
+Click any city to perform the search again.
+
+Duplicate entries are collapsed and the latest search moves to the top.
+
+---
+
+# ⏳ LOADING EXPERIENCE
+
+Weather data is fetched asynchronously.
+
+Instead of leaving the interface blank:
+
+```text
+             🔎 Searching...
+                    │
+                    ▼
+              ⏳ Loading...
+                    │
+                    ▼
+             🌤️ Weather Data
+```
+
+The application provides visible feedback while requests are in progress.
+
+---
+
+# 🛡️ ERROR HANDLING
+
+The application is designed to fail gracefully.
+
+### ❌ Invalid City
+
+```text
+╭────────────────────────────────────────╮
+│ ⚠️  City not found                     │
+│                                        │
+│ Check the spelling and try again.      │
+╰────────────────────────────────────────╯
+```
+
+### 🌐 Network Error
+
+```text
+╭────────────────────────────────────────╮
+│ ⚠️  Connection problem                 │
+│                                        │
+│ Check your internet connection.        │
+╰────────────────────────────────────────╯
+```
+
+### 🚨 API Error
+
+```text
+╭────────────────────────────────────────╮
+│ ⚠️  Something went wrong               │
+│                                        │
+│ Please try again shortly.              │
+╰────────────────────────────────────────╯
+```
+
+Supported error scenarios include invalid cities, network failures, API errors such as 401/429/500, and empty searches.
+
+---
+
+# 🖥️ INTERFACE PREVIEW
+
+> ### 📸 Add your actual project screenshots here
+
+### 🖥️ Desktop Dashboard
+
+<div align="center">
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│ 🌤️ WEATHER DASHBOARD                         °C  °F   📍    │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  🔎 Search for a city...                         [ SEARCH ]  │
+│                                                              │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│                    🌤️  28°C                                 │
+│                   New Delhi                                 │
+│                    Clear Sky                                 │
+│                                                              │
+│       💧 65%      💨 12 km/h      🌡️ 29°C                  │
+│                                                              │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│                    5-DAY FORECAST                            │
+│                                                              │
+│   ☀️        🌤️        🌧️        ☁️        ☀️               │
+│  32/24     30/23     27/22     29/23     33/25             │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+---
+
+# 📱 RESPONSIVE EXPERIENCE
+
+The dashboard adapts across:
+
+```text
+📱 MOBILE
+   ↓
+📲 TABLET
+   ↓
+💻 DESKTOP
+```
+
+### Target breakpoints
+
+| Device     |      Width |
 | ---------- | ---------: |
 | 📱 Mobile  |    ≤ 480px |
 | 📲 Tablet  | 481–1024px |
 | 💻 Desktop |   > 1024px |
 
-### Mobile
-
-```text
-┌─────────────────────┐
-│   Weather Dashboard │
-├─────────────────────┤
-│ 🔎 Search City      │
-├─────────────────────┤
-│                     │
-│       28°C          │
-│      ☀️ Clear       │
-│                     │
-├─────────────────────┤
-│   5-Day Forecast    │
-│                     │
-│  ☀️  🌤️  🌧️  ☁️  ☀️ │
-└─────────────────────┘
-```
-
-### Desktop
-
-```text
-┌──────────────────────────────────────────────────────┐
-│ 🌤️ Weather Dashboard       🔎 Search    °C / °F     │
-├──────────────────────────────────────────────────────┤
-│                                                      │
-│             CURRENT WEATHER                          │
-│                                                      │
-│                28°C ☀️                               │
-│             New Delhi, IN                            │
-│                                                      │
-│      💧 65%     💨 12 km/h     🌡️ 29°C             │
-│                                                      │
-├──────────────────────────────────────────────────────┤
-│                   5-DAY FORECAST                     │
-│                                                      │
-│  ☀️       🌤️       🌧️       ☁️       ☀️            │
-│ Mon      Tue      Wed      Thu      Fri             │
-└──────────────────────────────────────────────────────┘
-```
-
-The SRS requires no horizontal overflow and responsive reflow across mobile, tablet, and desktop layouts.
+The SRS requires the interface to avoid horizontal overflow and maintain usable touch targets on smaller screens.
 
 ---
 
-# 🏗️ System Architecture
-
-The project follows a **client-centric layered architecture**.
+# 🏗️ SYSTEM ARCHITECTURE
 
 ```text
-                   ┌───────────────────────┐
-                   │       USER            │
-                   └───────────┬───────────┘
-                               │
-                               ▼
-                   ┌───────────────────────┐
-                   │   PRESENTATION/UI     │
-                   │   HTML + CSS + JS     │
-                   └───────────┬───────────┘
-                               │
-                               ▼
-                   ┌───────────────────────┐
-                   │   APPLICATION LOGIC   │
-                   │ Validation / State    │
-                   │ Data Transformation   │
-                   └───────────┬───────────┘
-                               │
-                    ┌──────────┴──────────┐
-                    ▼                     ▼
-          ┌──────────────────┐   ┌──────────────────┐
-          │  WEATHER API     │   │   localStorage   │
-          │  REST / JSON      │   │   Local Data     │
-          └──────────────────┘   └──────────────────┘
+                         ┌────────────────┐
+                         │      USER      │
+                         └───────┬────────┘
+                                 │
+                                 ▼
+                  ┌────────────────────────────┐
+                  │      PRESENTATION LAYER    │
+                  │                            │
+                  │       HTML + CSS + UI      │
+                  └──────────────┬─────────────┘
+                                 │
+                                 ▼
+                  ┌────────────────────────────┐
+                  │      APPLICATION LOGIC     │
+                  │                            │
+                  │ Validation                  │
+                  │ State Management            │
+                  │ Data Transformation        │
+                  │ Error Handling              │
+                  └──────────────┬─────────────┘
+                                 │
+                   ┌─────────────┴─────────────┐
+                   │                           │
+                   ▼                           ▼
+        ┌────────────────────┐       ┌────────────────────┐
+        │    WEATHER API     │       │    localStorage    │
+        │                    │       │                    │
+        │ REST / JSON / HTTPS│       │ Preferences        │
+        └────────────────────┘       │ Recent Searches    │
+                                     └────────────────────┘
 ```
 
-The current release does not require a custom backend server. The browser communicates directly with the public weather API through HTTPS.
+The SRS defines this as a client-centric layered architecture with presentation, application logic, API service, and persistence responsibilities.
 
 ---
 
-# 🔄 Application Data Flow
+# 🔄 DATA FLOW
 
 ```text
-User enters city
-       │
-       ▼
-Input Validation
-       │
-       ▼
-Show Loading State
-       │
-       ▼
-Weather API Request
-       │
-       ▼
-Receive JSON Response
-       │
-       ▼
-Transform Weather Data
-       │
-       ▼
-Render Dashboard
-       │
-       ├──────────────► Save Last City
-       │
-       └──────────────► Update Recent Searches
-```
-
-If an error occurs:
-
-```text
-API / Network Error
+┌───────────────┐
+│ User Search   │
+└───────┬───────┘
         │
         ▼
-Error Handler
+┌───────────────┐
+│ Input Validate│
+└───────┬───────┘
         │
         ▼
-Friendly UI Message
+┌───────────────┐
+│ Loading State  │
+└───────┬───────┘
         │
         ▼
-User Can Retry
+┌───────────────┐
+│ Weather API   │
+└───────┬───────┘
+        │
+        ▼
+┌───────────────┐
+│ JSON Response  │
+└───────┬───────┘
+        │
+        ▼
+┌───────────────┐
+│ Transform Data │
+└───────┬───────┘
+        │
+        ├─────────────────────┐
+        ▼                     ▼
+┌───────────────┐     ┌───────────────┐
+│ Render UI     │     │ Save Search   │
+└───────────────┘     └───────────────┘
 ```
 
 ---
 
-# 🛠️ Technology Stack
+# 🛠️ TECHNOLOGY STACK
 
-| Technology             | Purpose                           |
-| ---------------------- | --------------------------------- |
-| **HTML5**              | Application structure             |
-| **CSS3**               | Styling and responsive layout     |
-| **JavaScript ES2020+** | Application logic                 |
-| **Fetch API**          | HTTP requests                     |
-| **REST API**           | Weather data                      |
-| **JSON**               | API data format                   |
-| **localStorage**       | Client-side persistence           |
-| **Geolocation API**    | Optional current-location weather |
-| **Git / GitHub**       | Version control                   |
+<div align="center">
 
-The SRS permits either vanilla HTML/CSS/JavaScript or React; the chosen approach should be kept consistent throughout the implementation.
+| Layer                  | Technology              |
+| ---------------------- | ----------------------- |
+| 🎨 **Structure**       | HTML5                   |
+| 🎨 **Styling**         | CSS3 / Flexbox / Grid   |
+| 🧠 **Logic**           | JavaScript ES2020+      |
+| 🌐 **HTTP**            | Fetch API               |
+| ☁️ **Data**            | REST / JSON Weather API |
+| 💾 **Storage**         | Browser localStorage    |
+| 📍 **Location**        | Browser Geolocation API |
+| 🔀 **Version Control** | Git / GitHub            |
+
+</div>
+
+The SRS recommends HTML5/CSS3 with either vanilla JavaScript or React, native Fetch for HTTP, and localStorage for persistence.
 
 ---
 
-# 📂 Suggested Project Structure
+# 📂 PROJECT STRUCTURE
 
 ```text
-weather-dashboard/
+🌤️ weather-dashboard/
 │
 ├── 📄 index.html
 │
-├── 📁 css/
+├── 🎨 css/
 │   └── styles.css
 │
-├── 📁 js/
+├── 🧠 js/
 │   ├── app.js
 │   ├── weatherApi.js
 │   ├── weatherController.js
 │   └── storage.js
 │
-├── 📁 assets/
+├── 🖼️ assets/
 │   ├── icons/
-│   └── images/
+│   └── screenshots/
 │
 ├── 🔐 .env
 ├── 🚫 .gitignore
-├── 📄 README.md
-└── 📄 package.json
+├── 📦 package.json
+└── 📖 README.md
 ```
 
-> If the actual implementation uses a different structure, update this section to match the repository.
-
-The SRS recommends separating API access, application logic, UI rendering, and persistence into distinct modules/components.
+> Adjust the structure above to match the actual repository implementation.
 
 ---
 
-# ⚙️ Installation & Setup
+# ⚙️ INSTALLATION
 
-## 1️⃣ Clone the Repository
+## 01 — Clone
 
 ```bash
 git clone <YOUR_REPOSITORY_URL>
 ```
 
-Move into the project directory:
+## 02 — Open
 
 ```bash
 cd weather-dashboard
 ```
 
----
+## 03 — Install Dependencies
 
-## 2️⃣ Configure the Weather API
+If your project uses npm:
 
-The project requires a public weather API such as **OpenWeatherMap or an equivalent provider**.
+```bash
+npm install
+```
 
-Create an environment/configuration file according to your implementation.
+## 04 — Configure API
 
-Example:
+Create your environment/configuration file.
 
 ```env
 WEATHER_API_KEY=your_api_key_here
 ```
 
-⚠️ **Never commit your API key to GitHub.**
+## 05 — Start
 
-Add your environment file to `.gitignore`:
+For a Vite-based project:
+
+```bash
+npm run dev
+```
+
+For a simple static project, use VS Code **Live Server** or another local development server.
+
+---
+
+# 🔑 API CONFIGURATION
+
+The application requires a public weather API such as OpenWeatherMap or another equivalent provider.
+
+```text
+                 YOUR APP
+                    │
+                    │ HTTPS
+                    ▼
+          ┌──────────────────┐
+          │   WEATHER API    │
+          └──────────────────┘
+                    │
+                    ▼
+              JSON RESPONSE
+```
+
+### ⚠️ Important
+
+Never upload your API key to GitHub.
 
 ```gitignore
 .env
 .env.*
 ```
 
-The SRS explicitly requires that the API key not be committed to public source control.
+The SRS explicitly identifies API-key protection as a security requirement.
 
 ---
 
-## 3️⃣ Run the Project
+# 🧪 TESTING
 
-### If using a simple HTML/CSS/JS implementation
+The project uses a combination of manual and lightweight automated testing.
 
-You can serve the project using a local development server.
+### Test Matrix
 
-For example:
+| ID      | Test                 | Expected Result            |
+| ------- | -------------------- | -------------------------- |
+| `TC-01` | Search valid city    | Weather appears            |
+| `TC-02` | Empty search         | Validation appears         |
+| `TC-03` | Valid weather search | All weather fields visible |
+| `TC-04` | Forecast             | 5 cards displayed          |
+| `TC-05` | Toggle unit          | Values update              |
+| `TC-06` | API request          | Loading indicator appears  |
+| `TC-07` | Invalid city         | Friendly error             |
+| `TC-08` | Offline              | Network error              |
+| `TC-09` | Location             | Local weather displayed    |
+| `TC-10` | Reload               | Previous city restored     |
+| `TC-11` | Mobile width         | No horizontal overflow     |
 
-```bash
-npx serve .
-```
-
-or use the **Live Server** extension in VS Code.
-
-### If using Vite
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the local URL shown by the development server.
-
----
-
-# 🔑 Environment Variables
-
-| Variable          | Purpose                               |
-| ----------------- | ------------------------------------- |
-| `WEATHER_API_KEY` | API authentication key                |
-| `WEATHER_API_URL` | Weather API base URL, if configurable |
-
-Example:
-
-```env
-WEATHER_API_KEY=xxxxxxxxxxxxxxxx
-WEATHER_API_URL=https://api.example.com
-```
-
-> Do not upload `.env` files containing real credentials.
+The SRS defines these test cases and requires the Must-Have requirements to pass before project completion.
 
 ---
 
-# 🧑‍💻 How to Use
-
-### Step 1 — Open the Dashboard
-
-Launch the application in a modern browser.
-
-### Step 2 — Search
-
-Enter a city:
+# ⚡ PERFORMANCE TARGETS
 
 ```text
-New Delhi
+┌─────────────────────────────────────────┐
+│ ⚡ WEATHER SEARCH                       │
+│    Target: ≤ 3 seconds                 │
+├─────────────────────────────────────────┤
+│ 🔄 UNIT CONVERSION                      │
+│    Target: ≤ 1 second                  │
+├─────────────────────────────────────────┤
+│ 🚀 INITIAL PAGE LOAD                    │
+│    Target: ≤ 2 seconds                 │
+└─────────────────────────────────────────┘
 ```
 
-Press:
-
-```text
-Search
-```
-
-or hit:
-
-```text
-Enter
-```
-
-### Step 3 — View Current Weather
-
-The dashboard displays:
-
-```text
-Temperature
-Condition
-Feels Like
-Humidity
-Wind Speed
-Location
-```
-
-### Step 4 — Check Forecast
-
-Scroll to the forecast section to view the next five days.
-
-### Step 5 — Change Temperature Unit
-
-Use:
-
-```text
-°C ⇄ °F
-```
-
-### Step 6 — Use Current Location
-
-Click the location button and allow browser location access.
-
-### Step 7 — Reuse Recent Searches
-
-Select a city from the recent-search list to search it again.
+These targets are specified in the SRS for normal operating conditions.
 
 ---
 
-# 🧪 Testing
+# 🔐 SECURITY
 
-The project follows a combination of:
-
-* Manual exploratory testing
-* Functional requirement testing
-* UI/responsive testing
-* Lightweight automated unit testing for pure logic
-
-The SRS identifies testing targets including temperature conversion, forecast aggregation, input validation, and error mapping.
-
-### Core Test Cases
-
-| Test                | Expected Result         |
-| ------------------- | ----------------------- |
-| Search valid city   | Weather displayed       |
-| Search empty input  | Validation message      |
-| Search invalid city | Friendly error          |
-| Disable network     | Network error shown     |
-| Toggle °C/°F        | Temperatures update     |
-| Search city         | 5-day forecast appears  |
-| Reload page         | Last city restored      |
-| Use location        | Weather for coordinates |
-| Resize to mobile    | No horizontal overflow  |
-
----
-
-# 📊 Performance Requirements
-
-The project targets:
+### Implemented principles
 
 ```text
-⚡ Weather result rendering
-   ≤ 3 seconds under normal API conditions
-
-⚡ Temperature conversion
-   ≤ 1 second
-
-⚡ Initial page load
-   ≤ 2 seconds excluding first weather request
+🔒 HTTPS
+     │
+     ├── Weather API communication
+     │
+     ▼
+🔑 Protected API Configuration
+     │
+     ├── .env / configuration
+     │
+     ▼
+🧹 Input Validation
+     │
+     ▼
+🛡️ Safe UI Rendering
 ```
 
-These targets are defined in the project's SRS.
+The current academic architecture communicates directly with the weather API. The SRS documents a future Node.js/Express proxy as a way to hide the API key in a production-oriented version.
 
 ---
 
-# 🔐 Security Considerations
+# 🚀 DEPLOYMENT
 
-The project follows several basic security practices:
+The current client-side architecture can be deployed using static hosting.
 
-* 🔒 HTTPS-only API communication
-* 🔑 API key kept outside public source control
-* 🧹 User input validation/sanitization
-* 🚫 No unnecessary personal information storage
-* 📍 Geolocation used only when the user grants permission
-
-The current academic version uses direct browser-to-weather-API communication, which means a client-side API key can technically be inspectable. The SRS identifies a future backend proxy as the production-oriented solution.
-
----
-
-# 🌐 Browser Compatibility
-
-The application is intended for modern versions of:
-
-* Google Chrome
-* Mozilla Firefox
-* Microsoft Edge
-* Safari
-
-Target environments include:
+### Compatible deployment options
 
 ```text
-📱 Mobile
-   ≥ 360px
-
-📲 Tablet
-   ≥ 768px
-
-💻 Desktop
-   ≥ 1280px
+┌────────────────────┐
+│    GitHub Pages    │
+└─────────┬──────────┘
+          │
+          ├──────────────┐
+          │              │
+          ▼              ▼
+   ┌───────────┐   ┌───────────┐
+   │  Netlify  │   │  Vercel   │
+   └───────────┘   └───────────┘
 ```
+
+The SRS identifies GitHub Pages, Netlify, and Vercel as suitable examples for static deployment.
 
 ---
 
-# 🚀 Deployment
-
-Because the current project is a client-side application, it can be deployed using a static hosting service.
-
-Possible deployment platforms include:
-
-* GitHub Pages
-* Netlify
-* Vercel
+# 🗺️ FUTURE ROADMAP
 
 ```text
-GitHub Repository
-       │
-       ▼
-Static Hosting
-       │
-       ▼
-🌤️ Weather Dashboard
-       │
-       ▼
-Weather API
+CURRENT
+   │
+   ├── 🌤️ Weather Search
+   ├── 📅 5-Day Forecast
+   ├── 📍 Geolocation
+   ├── 🕘 Recent Searches
+   └── 📱 Responsive UI
+          │
+          ▼
+PHASE 2
+   │
+   ├── 🔐 Backend Proxy
+   ├── 👤 User Accounts
+   ├── ⭐ Saved Locations
+   └── 💾 Server-side Caching
+          │
+          ▼
+PHASE 3
+   │
+   ├── 📊 Historical Analytics
+   ├── 🔔 Weather Alerts
+   ├── 🌍 Multi-language
+   ├── 🌙 Dark / Light Theme
+   └── 🧪 E2E Testing
 ```
 
-The SRS identifies static deployment as suitable for the current release because no custom backend server is required.
+These items represent future scope documented by the SRS rather than current-release requirements.
 
 ---
 
-# 📸 Screenshots
+# 📊 PROJECT SNAPSHOT
 
-Add your actual screenshots here after completing the UI.
+<div align="center">
 
-### 🖥️ Desktop
+| 📌                    | Details                    |
+| --------------------- | -------------------------- |
+| **Project Type**      | Responsive Web Application |
+| **Domain**            | Weather / Web Development  |
+| **Architecture**      | Client-Centric Layered     |
+| **Data Source**       | Public Weather API         |
+| **Forecast**          | 5 Days                     |
+| **Persistence**       | Browser localStorage       |
+| **Location**          | Browser Geolocation API    |
+| **Target Devices**    | Mobile / Tablet / Desktop  |
+| **API Communication** | HTTPS                      |
+| **Primary Language**  | JavaScript                 |
 
-```markdown
-![Desktop Dashboard](./assets/screenshots/desktop.png)
+</div>
+
+---
+
+# 🎯 PROJECT SCOPE
+
+### ✅ CURRENT RELEASE
+
+```text
+[x] 🔎 City Search
+[x] 🌡️ Current Weather
+[x] 📅 5-Day Forecast
+[x] 🌡️ Celsius / Fahrenheit
+[x] ⏳ Loading States
+[x] 🛡️ Error Handling
+[x] 📍 Geolocation
+[x] 🕘 Recent Searches
+[x] 💾 localStorage
+[x] 📱 Responsive Design
 ```
 
-### 📱 Mobile
+### 🔮 FUTURE
 
-```markdown
-![Mobile Dashboard](./assets/screenshots/mobile.png)
-```
-
-### 🌧️ Weather Search
-
-```markdown
-![Weather Search](./assets/screenshots/search.png)
-```
-
-### ⚠️ Error State
-
-```markdown
-![Error State](./assets/screenshots/error.png)
+```text
+[ ] 🔐 Backend Proxy
+[ ] 👤 User Authentication
+[ ] ⭐ Saved Locations
+[ ] 📊 Historical Analytics
+[ ] 🔔 Weather Alerts
+[ ] 📩 Notifications
+[ ] 🌍 Multi-language
+[ ] 🌙 Theme Switching
+[ ] 🧪 End-to-End Testing
 ```
 
 ---
 
-# 🗺️ Future Scope
+# 🎓 ACADEMIC INFORMATION
 
-The current release intentionally keeps the system focused. Possible future extensions identified in the SRS include:
+<div align="center">
 
-### 🔐 Backend Security
+### **Weather Dashboard**
 
-Introduce a Node.js/Express backend proxy to hide the API key and provide server-side caching.
+**Software Requirements Specification Aligned Project**
 
-### 👤 User Accounts
+<br>
 
-Add:
+**Developed By**
 
-* Registration
-* Login
-* User profiles
-* Saved locations
+# 👨‍💻 Amardeep Ranjan
 
-### 📊 Weather Analytics
+### B.Tech — Computer Science Engineering
 
-Possible future capabilities:
-
-* Historical weather data
-* Weather trends
-* Search analytics
-* Extended forecasts
-
-### 🔔 Weather Alerts
-
-Add:
-
-* Weather notifications
-* Severe weather alerts
-* Push notifications
-* Email/SMS notifications
-
-### 🌍 Internationalization
-
-Add multilingual support for:
-
-* UI labels
-* Weather conditions
-* User-facing messages
-
-### 🎨 Themes
-
-Introduce:
-
-```text
-☀️ Light Mode
-🌙 Dark Mode
-```
-
-### 🧪 Advanced Testing
-
-Introduce automated end-to-end testing using tools such as Playwright or Cypress.
-
-## These are **future-phase ideas**, not requirements of the current release.
-
-# 📌 Project Scope
-
-### ✅ Current Release
-
-* [x] City weather search
-* [x] Current weather
-* [x] 5-day forecast
-* [x] Celsius/Fahrenheit toggle
-* [x] Loading state
-* [x] Error handling
-* [x] Responsive interface
-* [x] Recent searches
-* [x] localStorage persistence
-* [x] Optional geolocation
-
-### 🔮 Future Release
-
-* [ ] Backend API proxy
-* [ ] User authentication
-* [ ] Saved locations
-* [ ] Historical weather analytics
-* [ ] Weather alerts
-* [ ] Push notifications
-* [ ] Multi-language support
-* [ ] Dark/light theme
-* [ ] End-to-end automated testing
-
----
-
-# 👨‍💻 Developer
-
-### **Amardeep Ranjan**
-
-**B.Tech — Computer Science Engineering**
 **GLA University, Greater Noida**
 
-University Roll No.: `225155000018`
+University Roll No. `225155000018`
 
-Faculty Guide / Evaluator: **Gautam Mukharjee**
+<br>
 
----
+**Faculty Guide / Evaluator**
 
-# 🎓 Academic Project
+### Gautam Mukharjee
 
-This Weather Dashboard is developed as an academic software engineering project and follows the requirements documented in the project's Software Requirements Specification.
-
-The SRS identifies the project as a responsive web application for real-time weather monitoring and forecasting.
+</div>
 
 ---
 
-# 📄 Documentation
+# 📚 DOCUMENTATION
 
-| Document         | Description                         |
-| ---------------- | ----------------------------------- |
-| 📘 SRS           | Software Requirements Specification |
-| 📖 README        | Project setup and usage             |
-| 🧪 Test Plan     | Functional and responsive testing   |
-| 🏗️ Architecture | System design and data flow         |
+| 📄 Document          | Purpose                            |
+| -------------------- | ---------------------------------- |
+| 📘 **SRS**           | Complete software requirements     |
+| 📖 **README**        | Setup, usage & architecture        |
+| 🧪 **Testing Plan**  | Functional & responsive validation |
+| 🏗️ **Architecture** | System design & data flow          |
+
+The SRS follows an IEEE 830 / ISO-IEC-IEEE 29148 aligned structure.
 
 ---
 
-# ⭐ Project Highlights
+# ⭐ WHY THIS PROJECT?
+
+> **A small project doesn't have to look like a small project.**
+
+Weather Dashboard demonstrates practical implementation of:
 
 ```text
-┌───────────────────────────────────────────────┐
-│              🌤️ WEATHER DASHBOARD             │
-├───────────────────────────────────────────────┤
-│                                               │
-│   🔎 Search Any City                          │
-│                                               │
-│   🌡️ Current Weather                         │
-│                                               │
-│   💧 Humidity   💨 Wind   🌡️ Feels Like       │
-│                                               │
-│   📅 5-Day Forecast                           │
-│                                               │
-│   🌡️ °C / °F Toggle                          │
-│                                               │
-│   📍 Current Location                         │
-│                                               │
-│   🕘 Recent Searches                          │
-│                                               │
-│   📱 Responsive Design                        │
-│                                               │
-│   ⚠️ Graceful Error Handling                  │
-│                                               │
-└───────────────────────────────────────────────┘
+API Integration
+      +
+Asynchronous JavaScript
+      +
+Responsive UI
+      +
+Data Transformation
+      +
+Client-Side Persistence
+      +
+Error Handling
+      +
+Geolocation
+      =
+A Complete Web Application
 ```
 
 ---
 
-## 📜 License
+<div align="center">
 
-This project is an academic project developed for educational purposes.
+## 🌤️ WEATHER DASHBOARD
 
-If you reuse or extend the project, please provide appropriate attribution to the original developer.
+### **Search. Discover. Understand the Weather.**
 
----
+<br>
 
-<p align="center">
+**Built with ❤️ by Amardeep Ranjan**
 
-### 🌤️ Built with HTML, CSS, JavaScript & Weather API
+<br>
 
-**Made with ❤️ by Amardeep Ranjan**
+`HTML` · `CSS` · `JavaScript` · `REST API` · `localStorage`
 
-</p>
+<br>
+
+⭐ **If you find this project useful, consider giving it a star!** ⭐
+
+</div>
